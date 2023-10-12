@@ -3,6 +3,10 @@ require 'rails_helper'
 describe User do
   let(:users) { create_list(:user, 3) }
   let(:user1) { users.first }
+  describe 'relationships' do
+    it {should have_secure_password }
+    it {should have_many(:decks) }
+  end
   it 'exists' do
     expect(user1).to be_a(User)
   end
@@ -15,4 +19,5 @@ describe User do
       expect(user.password_digest).to_not eq(nil)
     end
   end
+
 end
