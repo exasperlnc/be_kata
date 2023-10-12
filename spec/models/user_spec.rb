@@ -6,6 +6,7 @@ describe User do
   describe 'relationships' do
     it {should have_secure_password }
     it {should have_many(:decks) }
+    it {should have_many(:cards).through(:decks) }
   end
   it 'exists' do
     expect(user1).to be_a(User)
