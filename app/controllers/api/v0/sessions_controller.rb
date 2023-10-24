@@ -11,4 +11,14 @@ class API::V0::SessionsController < ApplicationController
         error: "Invalid Credentials" 
       }
   end
+
+  def get_current_user
+    if logged_in? 
+      render json: current_user
+    else
+      render json: {
+        error: "No login"
+      }
+    end
+  end
 end
