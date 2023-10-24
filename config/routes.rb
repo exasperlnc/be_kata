@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v0 do
       get 'get_current_user', to: 'sessions#get_current_user'
-      post 'login', to: 'sessions#create'
+      post 'login', to: 'sessions#create', as: 'login'
     end
   end
 end
