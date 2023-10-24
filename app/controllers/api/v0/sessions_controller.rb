@@ -1,4 +1,4 @@
-class API::V0::SessionsController < ApplicationController
+class Api::V0::SessionsController < ApplicationController
   def create
     @user = User.find_by(email: params[:session][:email])
     
@@ -10,6 +10,7 @@ class API::V0::SessionsController < ApplicationController
       render json: {
         error: "Invalid Credentials" 
       }
+    end
   end
 
   def get_current_user
