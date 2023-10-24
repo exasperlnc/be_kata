@@ -3,4 +3,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  namespace :api do
+    namespace :v0 do
+      get 'get_current_user', to: 'session#get_current_user'
+      post 'login', to: 'session#create'
+    end
+  end
 end
