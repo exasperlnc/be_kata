@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   namespace :api do
     namespace :v0 do
-      get 'get_current_user', to: 'sessions#get_current_user'
-      post 'login', to: 'sessions#create', as: 'login'
+      get '/get_current_user', to: 'sessions#get_current_user'
+      post '/login', to: 'sessions#create', as: 'login'
     end
   end
 end
