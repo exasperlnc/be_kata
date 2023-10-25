@@ -22,4 +22,14 @@ class Api::V0::SessionsController < ApplicationController
       }
     end
   end
+
+  def destroy
+    if !!session[:user_id]
+      session.delete(:user_id)
+    else
+      render json: {
+        error: "User was not logged in"
+      }
+    end
+  end
 end

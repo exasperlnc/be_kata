@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     namespace :v0 do
       get '/get_current_user', to: 'sessions#get_current_user'
       post '/login', to: 'sessions#create', as: 'login'
+      delete '/logout', to: 'sessions#destroy', as: 'logout'
     end
   end
 end
